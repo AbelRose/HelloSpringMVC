@@ -5,7 +5,12 @@
   </head>
   <body>
 
-    <a href="hello?username=admin&password=123456"> 测试springMVC </a>
+<%-- day01   <a href="hello?username=admin&password=123456"> 测试springMVC </a>--%>
+
+    <a href="test">测试SpringMVC</a>
+<%--    <form action="test" method="POST">--%>
+<%--      <input type="submit" value="测试POST"/>--%>
+<%--    </form>--%>
 
   </body>
 </html>
