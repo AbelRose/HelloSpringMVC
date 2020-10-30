@@ -16,6 +16,30 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <!--
+    配置过滤器 HiddenHttpMethodFilter
+    会根据几个条件对POST请求作出转换
+    条件：
+    1、必须是POST
+    2、参数_method
+    1）若不符合条件(没有_method)
+    直接就是POST
+    2）若符合条件：
+    经过转换之后，真正的请求方式，其实就是_method的值
+    -->
+
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern> <!-- /* 代表过滤所有的请求 -->
+    </filter-mapping>
+
+
+
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
