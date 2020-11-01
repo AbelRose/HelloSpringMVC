@@ -9,6 +9,10 @@
 <body>
 
 	<h1>FXXKU</h1>
+	<br/>
+	<!-- 用EL表达式从作用域中取值 -->
+	${requestScope.username}
+
 
 </body>
 </html>
