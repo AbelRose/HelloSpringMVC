@@ -73,12 +73,12 @@ public class ParamController {
 	public ModelAndView param() {
 		ModelAndView mav = new ModelAndView(); // Model 具有转载和传输数据的功能 View 视图
 		// 分为两步：Model View
-		mav.addObject("username ", "root"); // 装载存储数据 往request作用域中放值
+		mav.addObject("username ", "root"); // 装载存储数据 在request作用域中放值
 		mav.setViewName("success"); // success 就是一个视图名称 实现页面跳转
 		return mav; // 实现与外界交互的功能
 	}*/
 
-	/*第二种
+	/*第二种 map是用的较多的一种
 	@RequestMapping(value="/param", method=RequestMethod.POST)
 	public String param(Map<String, Object> map) {
 		map.put("username", "admin"); //向作用域中放值
