@@ -19,4 +19,8 @@
 <!--        <property name="order" value="1"></property> &lt;!&ndash; 配置优先级 越小越NB&ndash;&gt;-->
     </bean>
 
+    <!-- 加入静态资源css js等 -->
+    <mvc:default-servlet-handler/>  <!-- 1. 交给tomcat中默认的servlet去处理 -->
+    <mvc:annotation-driven/> <!-- 2. 驱动 -->
+
 </beans>

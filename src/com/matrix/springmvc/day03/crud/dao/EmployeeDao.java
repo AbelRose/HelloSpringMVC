@@ -28,7 +28,7 @@ public class EmployeeDao {
 	
 	private static Integer initId = 1006;
 	
-	public void save(Employee employee){
+	public void save(Employee employee){ // 添加和删除都在一起
 		if(employee.getId() == null){
 			employee.setId(initId++);
 		}
