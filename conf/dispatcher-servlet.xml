@@ -8,8 +8,9 @@
 
     <!-- 扫描组件 将加上@Controller 的类作为dispatcher 的控制层-->
 <!--day01    <context:component-scan base-package="com.matrix.springmvc.day01"></context:component-scan>-->
-<!--    <context:component-scan base-package="com.matrix.springmvc.day03.controller"></context:component-scan>-->
-    <context:component-scan base-package="com.matrix.springmvc.day03.crud"></context:component-scan>
+<!--day02    <context:component-scan base-package="com.matrix.springmvc.day03.controller"></context:component-scan>-->
+<!--day03    <context:component-scan base-package="com.matrix.springmvc.day03.crud"></context:component-scan>-->
+    <context:component-scan base-package="com.matrix.springmvc.day04"></context:component-scan>
 
     <!-- 配置视图解析器 (id="viewResolver"加不加都可以)-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> <!-- 转发视图 -->
@@ -20,7 +21,15 @@
     </bean>
 
     <!-- 加入静态资源css js等 -->
+    <!--
+		配置Tomcat中默认的servlet，DefaultServlet
+		注意：当DefaultServlet所设置的<url-pattern>的值和开发人员所配置的servlet的<url-pattern>相同，以开发人员所配置的servlet优先
+		作用：当客户端发送请求，由于DefaultServlet所设置的<url-pattern>的值和开发人员所配置DispatcherServlet的<url-pattern>都是/
+			因此先通过DispatcherServlet处理请求，找该请求是否有相对应的处理器，有则处理，无则交给DefaultServlet处理
+	 -->
     <mvc:default-servlet-handler/>  <!-- 1. 交给tomcat中默认的servlet去处理 -->
+    <!-- mvc驱动  和 mvc:default-servlet-handler搭配使用-->
     <mvc:annotation-driven/> <!-- 2. 驱动 -->
+
 
 </beans>

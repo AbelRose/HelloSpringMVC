@@ -1,0 +1,12 @@
+JSON知识:
+
+1. JSON有两种格式(看外面的括号就行)
+    (1) JSON对象: {key:value, key:value, ...}
+    (2) JSON数组: [value1, value2, ...]
+
+2. JSON对象的解析方式: 对象.key
+   JSON数组的接续方式: for循环遍历
+
+3. Java对象转换JSON:
+    (1) Bean和map 应转换为JSON对象
+    (2) List 应转换为JSON数组
