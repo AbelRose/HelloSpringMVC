@@ -5,11 +5,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 @Controller
 public class TestUploadAndDownController {
@@ -35,5 +39,17 @@ public class TestUploadAndDownController {
         is.close();
         return entity;
     }
+
+    @RequestMapping(value="/up", method= RequestMethod.POST)
+    public String up(String desc, MultipartFile uploadFile, HttpSession session) throws IOException {
+        //获取上传文件的名称
+        String fileName = uploadFile.getOriginalFilename();
+        String finalFileName = UUID.randomUUID() + fileName.substring(fileName.lastIndexOf(".")); // 解决文件重名
+        String path = session.getServletContext().getRealPath("photo") + File.separator + finalFileName; // 上传的路径
+        File file = new File(path);
+        uploadFile.transferTo(file);
+        return "success";
+    }
+
 }
 
