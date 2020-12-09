@@ -60,8 +60,12 @@
 
 <%-- day03   <a href="test">测试SpringMVC</a>--%>
 <%-- day03   <a href="emps">员工信息</a> <!-- day03 -->--%>
-    <input id="btn" type="button" value="测试ajax" />
+
+<%-- day04   <input id="btn" type="button" value="测试ajax" />
     <a href="testJson">testJson</a>
+--%>
+
+<a href="testException">测试异常</a>
 
   </body>
 </html>
