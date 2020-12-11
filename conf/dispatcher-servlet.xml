@@ -10,7 +10,8 @@
 <!--day01    <context:component-scan base-package="com.matrix.springmvc.day01"></context:component-scan>-->
 <!--day02    <context:component-scan base-package="com.matrix.springmvc.day03.controller"></context:component-scan>-->
 <!--day03    <context:component-scan base-package="com.matrix.springmvc.day03.crud"></context:component-scan>-->
-    <context:component-scan base-package="com.matrix.springmvc.day04"></context:component-scan>
+<!--day04    <context:component-scan base-package="com.matrix.springmvc.day04"></context:component-scan>-->
+    <context:component-scan base-package="com.matrix.springmvc.day05.SS.matrix.controller"></context:component-scan>
 
     <!-- 配置视图解析器 (id="viewResolver"加不加都可以)-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> <!-- 转发视图 -->
@@ -42,23 +43,23 @@
         <property name="maxUploadSize" value="88888888"></property>
     </bean>
 
-    <mvc:interceptors>
-        <!-- 默认拦截所有请求 -->
-        <bean class="com.matrix.springmvc.day04.interceptor.FirstInterceptor"></bean>
-        <bean class="com.matrix.springmvc.day04.interceptor.SecondInterceptor"></bean>
-        <!-- 此方式要求拦截器类上必须加注解@Component -->
-        <!-- <ref bean="firstInterceptor"/> -->
+<!--  <mvc:interceptors>-->
+<!--        &lt;!&ndash; 默认拦截所有请求 &ndash;&gt;-->
+<!--        <bean class="com.matrix.springmvc.day04.interceptor.FirstInterceptor"></bean>-->
+<!--        <bean class="com.matrix.springmvc.day04.interceptor.SecondInterceptor"></bean>-->
+<!--        &lt;!&ndash; 此方式要求拦截器类上必须加注解@Component &ndash;&gt;-->
+<!--        &lt;!&ndash; <ref bean="firstInterceptor"/> &ndash;&gt;-->
 
-        <!-- 设置自定义拦截方式 -->
-        <!-- <mvc:interceptor>
-            <bean></bean>
-            <mvc:mapping path=""/>
-            <mvc:exclude-mapping path=""/>
-        </mvc:interceptor> -->
+<!--        &lt;!&ndash; 设置自定义拦截方式 &ndash;&gt;-->
+<!--        &lt;!&ndash; <mvc:interceptor>-->
+<!--            <bean></bean>-->
+<!--            <mvc:mapping path=""/>-->
+<!--            <mvc:exclude-mapping path=""/>-->
+<!--        </mvc:interceptor> &ndash;&gt;-->
 
-    </mvc:interceptors>
+<!--    </mvc:interceptors>-->
 
-<!--day05    处理异常-->
+<!--day05    处理异常
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
@@ -66,5 +67,5 @@
             </props>
         </property>
     </bean>
-
+-->
 </beans>

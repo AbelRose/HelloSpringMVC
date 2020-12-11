@@ -74,4 +74,10 @@
         <url-pattern>/</url-pattern>  <!-- 不用/* 可以自动的把访问jsp的页面过滤掉 -->
     </servlet-mapping>
 
+
+<!--    day05 整合SS-->
+    <listener>
+        <listener-class>com.matrix.springmvc.day05.SS.matrix.listener.SpringListener</listener-class>
+    </listener>
+
 </web-app>
